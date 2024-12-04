@@ -19,7 +19,7 @@ require("colorizer").setup({
 		-- parsers can contain values used in |user_default_options|
 		sass = { enable = false, parsers = { "css" } }, -- Enable sass colors
 		-- Virtualtext character to use
-		virtualtext = "■",
+		virtualtext = "⏺",
 		-- Display virtualtext inline with color
 		virtualtext_inline = true,
 		-- Virtualtext highlight mode: 'background'|'foreground'
