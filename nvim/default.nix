@@ -21,9 +21,10 @@ in
       nvim-treesitter # treesitter configuration
       nvim-treesitter.withAllGrammars # TODO: add only needed languages (will save ~200Mb of disk)
       nvim-autopairs # auto match braces
+      nvim-colorizer-lua # preview color codes
       lspkind-nvim # plugin to provide icons for various lsps 
       nvim-lspconfig # allow configuration of an lsp using lua
-      #gruvbox # pretty good theme
+      gruvbox # pretty good theme
       harpoon # customizable file finder
       undotree # view undo history
       vim-fugitive # git stuff
