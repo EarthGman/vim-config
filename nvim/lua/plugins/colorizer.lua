@@ -1,4 +1,4 @@
-# https://github.com/catgoose/nvim-colorizer.lua
+-- https://github.com/catgoose/nvim-colorizer.lua
 
 require("colorizer").setup({
 	filetypes = { "*" },
