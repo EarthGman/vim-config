@@ -4,6 +4,10 @@ let
   inherit (lib) mkIf mkDefault;
 in
 {
+  nixpkgs.overlays = [
+    (final: _prev: import ../extra-plugins { pkgs = final; })
+  ];
+
   programs.neovim = {
     package = pkgs.neovim-unwrapped;
     # provide aliases just in case nvim isn't recognized by something
@@ -38,9 +42,6 @@ in
     ];
     extraLuaConfig = builtins.readFile ./init.lua;
   };
-
-  # by default dont let stylix style vim since it is kind of jank
-  stylix.targets.neovim.enable = mkDefault false;
 
   xdg.configFile."nvim/lua" = mkIf cfg.enable {
     source = ./lua;
