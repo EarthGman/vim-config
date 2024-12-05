@@ -1,19 +1,19 @@
 -- Define the colors
 local colors = {
-	background = "#1E1E1E",   -- Dark background
-	foreground = "#D4D4D4",   -- Light foreground
-	red = "#F44747",          -- Red for errors
-	green = "#608B4E",        -- Green for success
-	blue = "#569CD6",         -- Blue for keywords
-	yellow = "#DCDCAA",       -- Yellow for constants
-	magenta = "#C586C0",      -- Magenta for functions
-	cyan = "#4EC9B0",         -- Cyan for types
-	gray = "#808080",         -- Comments
+	background = "#1E1E1E", -- Dark background
+	foreground = "#D4D4D4", -- Light foreground
+	red = "#F44747",       -- Red for errors
+	green = "#608B4E",     -- Green for success
+	blue = "#569CD6",      -- Blue for keywords
+	yellow = "#DCDCAA",    -- Yellow for constants
+	magenta = "#C586C0",   -- Magenta for functions
+	cyan = "#4EC9B0",      -- Cyan for types
+	gray = "#808080",      -- Comments
 }
 
 -- Apply the colors
 local function apply_colorscheme()
-	vim.cmd("highlight clear")
+	vim.cmd "highlight clear"
 	vim.o.background = "dark"
 	vim.o.termguicolors = true
 

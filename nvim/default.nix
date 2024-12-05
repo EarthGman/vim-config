@@ -1,8 +1,4 @@
 { pkgs, lib, config, ... }:
-let
-  cfg = config.programs.neovim;
-  inherit (lib) mkIf mkDefault;
-in
 {
   nixpkgs.overlays = [
     (final: _prev: import ../extra-plugins { pkgs = final; })
@@ -44,7 +40,7 @@ in
     extraLuaConfig = builtins.readFile ./init.lua;
   };
 
-  xdg.configFile."nvim/lua" = mkIf cfg.enable {
+  xdg.configFile."nvim/lua" = lib.mkIf config.programs.neovim.enable {
     source = ./lua;
   };
 }
