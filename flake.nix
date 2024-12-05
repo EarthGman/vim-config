@@ -7,7 +7,7 @@
 
   outputs = _: {
     homeManagerModule = rec {
-      neovim = import ./nvim;
+      neovim = import ./.;
       default = neovim;
     };
   };
