@@ -1,7 +1,10 @@
 require("core.keymap")
 require("core.options")
 
+require("nvim-surround").setup()
+
 require('themes.chatgpt').apply()
+
 require("plugins.telescope")
 require("plugins.treesitter")
 require("plugins.autopairs")

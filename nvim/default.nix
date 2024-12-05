@@ -27,7 +27,7 @@ in
       harpoon # customizable file finder
       undotree # view undo history
       vim-fugitive # git stuff
-      vim-surround # in visual mode, `S(` to surround text in parens
+      nvim-surround # https://github.com/kylechui/nvim-surround/
     ] ++ (with pkgs.extraVimPlugins; [
       # locally derived vim plugings
       nvim-vauge
