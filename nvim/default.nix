@@ -27,6 +27,7 @@ in
       harpoon # customizable file finder
       undotree # view undo history
       vim-fugitive # git stuff
+      vim-surround # in visual mode, `S(` to surround text in parens
     ] ++ (with pkgs.extraVimPlugins; [
       # locally derived vim plugings
       nvim-vauge
@@ -40,7 +41,7 @@ in
       nixpkgs-fmt # nix formatter
       stylua # opionated Lua code formatter
     ];
-    extraLuaConfig = mkDefault builtins.readFile ./init.lua;
+    extraLuaConfig = mkDefault (builtins.readFile ./init.lua);
   };
 
   xdg.configFile = mkIf config.programs.neovim.enable {
