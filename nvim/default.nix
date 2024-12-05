@@ -1,6 +1,7 @@
 { pkgs, lib, config, ... }:
 let
   inherit (lib) mkDefault mkIf;
+  enable = config.programs.neovim.enable;
 in
 {
   nixpkgs.overlays = [
@@ -41,10 +42,11 @@ in
       nixpkgs-fmt # nix formatter
       stylua # opionated Lua code formatter
     ];
-    extraLuaConfig = mkDefault (builtins.readFile ./init.lua);
+
+    extraLuaConfig = builtins.readFile ./init.lua;
   };
 
-  xdg.configFile = mkIf config.programs.neovim.enable {
+  xdg.configFile = mkIf enable {
     # core
     "nvim/lua/core/keymap.lua".source = mkDefault ./lua/core/keymap.lua;
     "nvim/lua/core/options.lua".source = mkDefault ./lua/core/options.lua;

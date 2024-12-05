@@ -5,7 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
-  outputs = { ... }: {
+  outputs = _: {
     homeManagerModule = rec {
       neovim = import ./nvim;
       default = neovim;
