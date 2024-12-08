@@ -3,7 +3,7 @@ require("core.options")
 
 require("nvim-surround").setup()
 
-require('themes.chatgpt').apply()
+--require('themes.chatgpt').apply()
 
 require("plugins.telescope")
 require("plugins.treesitter")
@@ -14,7 +14,7 @@ require("plugins.fugitive")
 require("plugins.colorizer")
 
 -- require("themes.gruvbox")
--- require("themes.vague")
+require("themes.vague")
 
 
 require("lsp.nil")
