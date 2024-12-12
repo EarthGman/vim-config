@@ -5,7 +5,7 @@ let
 in
 {
   nixpkgs.overlays = [
-    (final: _prev: import ./extra-plugins { pkgs = final; })
+    (final: _prev: import ../extra-plugins { pkgs = final; })
   ];
 
   programs.neovim = {
