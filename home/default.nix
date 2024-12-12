@@ -19,7 +19,10 @@ in
       telescope-nvim # file search tui
       plenary-nvim # popular dependency needed by most vim plugins
       nvim-treesitter # treesitter configuration
-      nvim-treesitter.withAllGrammars # TODO: add only needed languages (will save ~200Mb of disk)
+
+      nvim-treesitter-parsers.nix
+      nvim-treesitter-parsers.lua
+
       nvim-autopairs # auto match braces
       nvim-colorizer-lua # preview color codes
       lspkind-nvim # plugin to provide icons for various lsps 
