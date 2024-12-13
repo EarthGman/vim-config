@@ -8,5 +8,16 @@
       vimAlias = true;
       configure = import ./configuration.nix { inherit pkgs; };
     };
+
+    environment = {
+      systemPackages = with pkgs; [
+        nil
+        lua-language-server
+        nixpkgs-fmt
+        stylua
+      ];
+
+      etc."xdg/nvim/lua".source = ./shared;
+    };
   };
 }

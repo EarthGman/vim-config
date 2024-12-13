@@ -2,15 +2,6 @@
 {
   customRC = "luafile ${./init.lua}";
   packages = {
-    environment = {
-      start = with pkgs; [
-        nil
-        lua-language-server
-        nixpkgs-fmt
-        stylua
-      ];
-    };
-
     plugins = {
       start = with pkgs.vimPlugins; [
         plenary-nvim
