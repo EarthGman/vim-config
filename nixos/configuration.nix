@@ -11,7 +11,7 @@
       harpoon
       undotree
       vim-fugitive
-    ] ++ (with pkgs.vim-plugins.nvim-treesitter-parsers; [
+    ] ++ (with pkgs.vimPlugins.nvim-treesitter-parsers; [
       nix
       lua
     ]);
