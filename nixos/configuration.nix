@@ -8,6 +8,7 @@
       nvim-treesitter
       nvim-autopairs
       lspkind-nvim
+      nvim-lspconfig
       harpoon
       undotree
       vim-fugitive
