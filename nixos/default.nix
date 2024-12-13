@@ -17,7 +17,7 @@
         stylua
       ];
 
-      etc."xdg/nvim/lua".source = ./shared;
+      etc."xdg/nvim/lua".source = ../shared;
     };
   };
 }
