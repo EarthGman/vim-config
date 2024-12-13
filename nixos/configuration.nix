@@ -2,7 +2,7 @@
 {
   customRC = "luafile ${./init.lua}";
   packages.myPlugins = {
-    start = with pkgs.vim-plugins; [
+    start = with pkgs.vimPlugins; [
       plenary-nvim
       telescope-nvim
       nvim-treesitter
