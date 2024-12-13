@@ -10,5 +10,9 @@
       neovim = import ./home;
       default = neovim;
     };
+    nixos = rec {
+      neovim = import ./nixos;
+      default = neovim;
+    };
   };
 }

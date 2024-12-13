@@ -46,27 +46,27 @@ in
       stylua # opionated Lua code formatter
     ];
 
-    extraLuaConfig = builtins.readFile ./nvim/init.lua;
+    extraLuaConfig = builtins.readFile ./init.lua;
   };
 
   xdg.configFile = mkIf enable {
     # core
-    "nvim/lua/core/keymap.lua".source = mkDefault ./nvim/lua/core/keymap.lua;
-    "nvim/lua/core/options.lua".source = mkDefault ./nvim/lua/core/options.lua;
+    "nvim/lua/core/keymap.lua".source = mkDefault ../shared/core/keymap.lua;
+    "nvim/lua/core/options.lua".source = mkDefault ../shared/core/options.lua;
     # lsp
-    "nvim/lua/lsp/lua_ls.lua".source = mkDefault ./nvim/lua/lsp/lua_ls.lua;
-    "nvim/lua/lsp/nil.lua".source = mkDefault ./nvim/lua/lsp/nil.lua;
+    "nvim/lua/lsp/lua_ls.lua".source = mkDefault ../shared/lsp/lua_ls.lua;
+    "nvim/lua/lsp/nil.lua".source = mkDefault ../shared/lsp/nil.lua;
     # plugins
-    "nvim/lua/plugins/autopairs.lua".source = mkDefault ./nvim/lua/plugins/autopairs.lua;
-    "nvim/lua/plugins/colorizer.lua".source = mkDefault ./nvim/lua/plugins/colorizer.lua;
-    "nvim/lua/plugins/fugitive.lua".source = mkDefault ./nvim/lua/plugins/fugitive.lua;
-    "nvim/lua/plugins/harpoon.lua".source = mkDefault ./nvim/lua/plugins/harpoon.lua;
-    "nvim/lua/plugins/telescope.lua".source = mkDefault ./nvim/lua/plugins/telescope.lua;
-    "nvim/lua/plugins/treesitter.lua".source = mkDefault ./nvim/lua/plugins/treesitter.lua;
-    "nvim/lua/plugins/undotree.lua".source = mkDefault ./nvim/lua/plugins/undotree.lua;
+    "nvim/lua/plugins/autopairs.lua".source = mkDefault ../shared/plugins/autopairs.lua;
+    "nvim/lua/plugins/colorizer.lua".source = mkDefault ../shared/plugins/colorizer.lua;
+    "nvim/lua/plugins/fugitive.lua".source = mkDefault ../shared/plugins/fugitive.lua;
+    "nvim/lua/plugins/harpoon.lua".source = mkDefault ../shared/plugins/harpoon.lua;
+    "nvim/lua/plugins/telescope.lua".source = mkDefault ../shared/plugins/telescope.lua;
+    "nvim/lua/plugins/treesitter.lua".source = mkDefault ../shared/plugins/treesitter.lua;
+    "nvim/lua/plugins/undotree.lua".source = mkDefault ../shared/plugins/undotree.lua;
     # themes
-    "nvim/lua/themes/chatgpt.lua".source = mkDefault ./nvim/lua/themes/chatgpt.lua;
-    "nvim/lua/themes/gruvbox.lua".source = mkDefault ./nvim/lua/themes/gruvbox.lua;
-    "nvim/lua/themes/vague.lua".source = mkDefault ./nvim/lua/themes/vague.lua;
+    "nvim/lua/themes/chatgpt.lua".source = mkDefault ../shared/themes/chatgpt.lua;
+    "nvim/lua/themes/gruvbox.lua".source = mkDefault ../shared/themes/gruvbox.lua;
+    "nvim/lua/themes/vague.lua".source = mkDefault ../shared/themes/vague.lua;
   };
 }
