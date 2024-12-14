@@ -1,3 +1,4 @@
+--init.lua for imperative configuration
 require("core.keymap")
 require("core.options")
 
