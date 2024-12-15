@@ -1,5 +1,4 @@
 local lspc = require("lspconfig")
-
 lspc.lua_ls.setup {
 	settings = {
 		Lua = {

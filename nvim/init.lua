@@ -2,21 +2,24 @@
 require("core.keymap")
 require("core.options")
 
-require("nvim-surround").setup()
+--package managers
+require("plugins.vim-plug")
+require("plugins.mason")
 
---require('themes.chatgpt').apply()
-
+--plugins
+require("plugins.nvim-surround")
 require("plugins.telescope")
 require("plugins.treesitter")
 require("plugins.autopairs")
 require("plugins.harpoon")
 require("plugins.undotree")
 require("plugins.fugitive")
-require("plugins.colorizer")
+--require("plugins.colorizer")
 
--- require("themes.gruvbox")
+--themes
+--require("themes.gruvbox")
 require("themes.vague")
 
-
+--LSP
 require("lsp.nil")
 require("lsp.lua_ls")
