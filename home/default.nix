@@ -46,7 +46,7 @@ in
       stylua # opionated Lua code formatter
     ];
 
-    extraLuaConfig = builtins.readFile ../nvim/init.lua;
+    extraLuaConfig = builtins.readFile ./init.lua;
   };
 
   xdg.configFile = mkIf enable {
