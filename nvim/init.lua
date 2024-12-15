@@ -14,7 +14,7 @@ require("plugins.autopairs")
 require("plugins.harpoon")
 require("plugins.undotree")
 require("plugins.fugitive")
---require("plugins.colorizer")
+require("plugins.colorizer")
 
 --themes
 --require("themes.gruvbox")
