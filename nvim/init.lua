@@ -1,6 +1,6 @@
 --init.lua for imperative configuration
-require("core.keymap")
 require("core.options")
+require("core.keymap")
 
 --package managers
 require("plugins.vim-plug")
