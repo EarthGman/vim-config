@@ -10,7 +10,7 @@ require("plugins.undotree")
 require("plugins.fugitive")
 require("plugins.colorizer")
 
-require("themes.vauge")
+require("themes.vague")
 
 require("lsp.nil")
 require("lsp.lua_ls")
