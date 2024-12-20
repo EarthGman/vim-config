@@ -18,6 +18,9 @@
         default = neovim;
       };
 
-      overlay = (final: _prev: import ../extra-plugins { pkgs = final; inherit inputs; });
+      overlay = rec {
+        extraPlugins = (final: _prev: import ../extra-plugins { pkgs = final; inherit inputs; });
+        default = extraPlugins;
+      };
     };
 }
