@@ -19,7 +19,7 @@
       };
 
       overlay = rec {
-        extraPlugins = (final: _prev: import ../extra-plugins { pkgs = final; inherit inputs; });
+        extraPlugins = final: _prev: import ../extra-plugins { pkgs = final; inherit inputs; };
         default = extraPlugins;
       };
     };
