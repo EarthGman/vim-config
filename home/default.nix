@@ -31,7 +31,7 @@ in
     ] ++ (with pkgs.extraVimPlugins; [
       # locally derived vim plugings
       nvim-vauge
-      #blink-cmp
+      blink-cmp
     ]);
 
     extraPackages = with pkgs; [
