@@ -4,10 +4,6 @@ let
   enable = config.programs.neovim.enable;
 in
 {
-  nixpkgs.overlays = [
-    (final: _prev: import ../extra-plugins { pkgs = final; })
-  ];
-
   programs.neovim = {
     package = pkgs.neovim-unwrapped;
     # provide aliases just in case nvim isn't recognized by something
