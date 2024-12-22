@@ -1,6 +1,7 @@
 require("core.keymap")
 require("core.options")
 
+require("plugins.blink-cmp")
 require("plugins.nvim-surround")
 require("plugins.telescope")
 require("plugins.treesitter")
