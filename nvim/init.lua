@@ -15,7 +15,7 @@ require("plugins.harpoon")
 require("plugins.undotree")
 require("plugins.fugitive")
 require("plugins.colorizer")
-require("plugins.blink.cmp")
+require("plugins.blink-cmp")
 
 --themes
 --require("themes.gruvbox")

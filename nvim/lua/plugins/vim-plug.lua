@@ -3,6 +3,7 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
 
+Plug('saghen/blink.cmp', { ['tag'] = '*' })
 Plug('https://github.com/ThePrimeagen/harpoon.git')
 Plug('https://github.com/neovim/nvim-lspconfig.git')
 Plug('https://github.com/nvim-lua/plenary.nvim.git')
