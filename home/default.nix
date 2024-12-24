@@ -17,10 +17,6 @@ in
         telescope-nvim # file search tui
         plenary-nvim # popular dependency needed by most vim plugins
         nvim-treesitter # treesitter configuration
-
-        nvim-treesitter-parsers.nix
-        nvim-treesitter-parsers.lua
-
         nvim-autopairs # auto match braces
         nvim-colorizer-lua # preview color codes
         lspkind-nvim # plugin to provide icons for various lsps 
@@ -30,6 +26,11 @@ in
         undotree # view undo history
         vim-fugitive # git stuff
         nvim-surround # https://github.com/kylechui/nvim-surround/
+
+        nvim-treesitter-parsers.nix
+        nvim-treesitter-parsers.lua
+        nvim-treesitter-parsers.cpp
+
       ] ++ (with pkgs.extraVimPlugins; [
         # locally derived vim plugings
         nvim-vauge
@@ -40,6 +41,7 @@ in
         # packages accessible to vim but not placed on the main shell path
         nil # nix language server
         lua-language-server
+        clang-tools
 
         nixpkgs-fmt # nix formatter
         stylua # opionated Lua code formatter
