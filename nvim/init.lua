@@ -1,10 +1,8 @@
---init.lua for imperative configuration
 require("core.options")
 require("core.keymap")
 
 --package managers
-require("plugins.vim-plug")
-require("plugins.mason")
+--require("plugins.mason")
 
 --plugins
 require("plugins.nvim-surround")

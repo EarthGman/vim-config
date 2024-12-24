@@ -43,7 +43,7 @@ in
       stylua # opionated Lua code formatter
     ];
 
-    extraLuaConfig = builtins.readFile ./init.lua;
+    extraLuaConfig = builtins.readFile ../nvim/init.lua;
   };
 
   xdg.configFile = mkIf enable {
@@ -61,8 +61,8 @@ in
     "nvim/lua/plugins/telescope.lua".source = mkDefault ../nvim/lua/plugins/telescope.lua;
     "nvim/lua/plugins/treesitter.lua".source = mkDefault ../nvim/lua/plugins/treesitter.lua;
     "nvim/lua/plugins/undotree.lua".source = mkDefault ../nvim/lua/plugins/undotree.lua;
+		"nvim/lua/plugins/blink-cmd.lua".source = mkDefault ../nvim/lua/plugins/blink-cmd.lua;
     # themes
-    "nvim/lua/themes/chatgpt.lua".source = mkDefault ../nvim/lua/themes/chatgpt.lua;
     "nvim/lua/themes/gruvbox.lua".source = mkDefault ../nvim/lua/themes/gruvbox.lua;
     "nvim/lua/themes/vague.lua".source = mkDefault ../nvim/lua/themes/vague.lua;
   };
