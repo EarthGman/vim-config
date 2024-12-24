@@ -54,6 +54,7 @@ in
     "nvim/lua/lsp/lua_ls.lua".source = mkDefault ../nvim/lua/lsp/lua_ls.lua;
     "nvim/lua/lsp/nil.lua".source = mkDefault ../nvim/lua/lsp/nil.lua;
     # plugins
+		"nvim/lua/plugins/nvim-surround.lua".source = mkDefault ../nvim/lua/plugins/nvim-surround.lua;
     "nvim/lua/plugins/autopairs.lua".source = mkDefault ../nvim/lua/plugins/autopairs.lua;
     "nvim/lua/plugins/colorizer.lua".source = mkDefault ../nvim/lua/plugins/colorizer.lua;
     "nvim/lua/plugins/fugitive.lua".source = mkDefault ../nvim/lua/plugins/fugitive.lua;
