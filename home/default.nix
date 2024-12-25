@@ -14,6 +14,7 @@ in
       vimdiffAlias = mkDefault true;
 
       plugins = with pkgs.vimPlugins; [
+        which-key-nvim # keybind manager
         telescope-nvim # file search tui
         plenary-nvim # popular dependency needed by most vim plugins
         nvim-treesitter # treesitter configuration

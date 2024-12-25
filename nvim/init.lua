@@ -5,6 +5,7 @@ require("core.keymap")
 --require("plugins.mason")
 
 --plugins
+require("plugins.whichkey")
 require("plugins.nvim-surround")
 require("plugins.telescope")
 require("plugins.treesitter")
