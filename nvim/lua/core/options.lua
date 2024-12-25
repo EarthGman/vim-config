@@ -1,4 +1,5 @@
 local opt = vim.opt
+vim.g.mapleader = " "
 
 vim.wo.number = true
 opt.tabstop = 2
