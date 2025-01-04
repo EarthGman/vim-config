@@ -52,6 +52,7 @@ in
 
         nixpkgs-fmt # nix formatter
         stylua # opionated Lua code formatter
+        yapf # yet another python formatter
       ];
 
       extraLuaConfig = mkIf (!(cfg.imperativeLua)) (builtins.readFile ../nvim/init.lua);
