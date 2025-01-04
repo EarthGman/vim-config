@@ -1,6 +1,6 @@
 local lspc = require("lspconfig")
 
-lspc.pyright.setup {
+lspc.pyright.setup({
 	on_attach = function()
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			pattern = "*.py",
@@ -9,4 +9,13 @@ lspc.pyright.setup {
 			end,
 		})
 	end,
-}
+
+	-- no work :(
+	-- settings = {
+	-- 	['pyright'] = {
+	-- 		formatting = {
+	-- 			command = { "yapf -i vim.fn.expand('%:p')" },
+	-- 		},
+	-- 	},
+	-- },
+})
