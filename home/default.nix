@@ -46,6 +46,7 @@ in
         # packages accessible to vim but not placed on the main shell path
         nil # nix language server
         lua-language-server
+        pyright # python language server
         clang-tools
         python3
 
