@@ -5,6 +5,7 @@ let
 in
 {
   options.programs.neovim.imperativeLua = mkEnableOption "enable imperative lua configuration";
+
   config = {
     programs.neovim = {
       package = pkgs.neovim-unwrapped;
@@ -30,6 +31,7 @@ in
 
         nvim-treesitter-parsers.nix
         nvim-treesitter-parsers.lua
+
         nvim-treesitter-parsers.cpp
 
         nvim-gdb
@@ -45,6 +47,7 @@ in
         nil # nix language server
         lua-language-server
         clang-tools
+        python3
 
         nixpkgs-fmt # nix formatter
         stylua # opionated Lua code formatter
