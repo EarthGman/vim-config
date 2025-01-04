@@ -32,6 +32,8 @@ in
         nvim-treesitter-parsers.lua
         nvim-treesitter-parsers.cpp
 
+        nvim-gdb
+
       ] ++ (with pkgs.extraVimPlugins; [
         # locally derived vim plugings
         nvim-vauge
