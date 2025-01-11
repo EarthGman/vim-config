@@ -1,7 +1,7 @@
 local opt = vim.opt
 vim.g.mapleader = " "
 
-vim.wo.number = true
+vim.wo.relativenumber = true
 opt.tabstop = 2
 opt.shiftwidth = 2
 opt.mouse = "a"               --mouse support in all modes (why not?)

@@ -28,6 +28,7 @@ in
         undotree # view undo history
         vim-fugitive # git stuff
         nvim-surround # https://github.com/kylechui/nvim-surround/
+        nvim-alpha
 
         nvim-treesitter-parsers.nix
         nvim-treesitter-parsers.lua

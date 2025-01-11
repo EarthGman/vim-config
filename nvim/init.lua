@@ -10,6 +10,7 @@ require("plugins.treesitter")
 require("plugins.autopairs")
 require("plugins.colorizer")
 require("plugins.blink-cmp")
+require("plugins.alpha")
 
 --themes
 --require("themes.gruvbox")
