@@ -3,6 +3,7 @@
   options.modules.neovim.enable = lib.mkEnableOption "enable neovim";
   config = lib.mkIf config.modules.neovim.enable {
     programs.neovim = {
+      defaultEditor = true;
       enable = true;
       viAlias = true;
       vimAlias = true;
