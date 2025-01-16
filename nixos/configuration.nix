@@ -14,6 +14,7 @@
         undotree
         vim-fugitive
         alpha-nvim
+        mini-icons
         which-key-nvim
       ] ++ (with pkgs.extraVimPlugins; [
         blink-cmp

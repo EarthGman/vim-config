@@ -23,6 +23,7 @@ in
         nvim-colorizer-lua # preview color codes
         lspkind-nvim # plugin to provide icons for various lsps 
         nvim-lspconfig # allow configuration of an lsp using lua
+        mini-icons
         gruvbox # pretty good theme
         harpoon # customizable file finder
         undotree # view undo history
