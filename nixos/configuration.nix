@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   customRC = ''
+    customRC is loaded
     luafile ${./init.lua}
   '';
   packages = {
