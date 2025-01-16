@@ -1,6 +1,8 @@
 { pkgs, ... }:
 {
-  customRC = "luafile ${./init.lua}";
+  customRC = ''
+    luafile ${./init.lua}
+  '';
   packages = {
     plugins = {
       start = with pkgs.vimPlugins; [
