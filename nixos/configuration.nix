@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  customInit = builtins.readFile ./init.lua;
+  customRC = builtins.readFile ./init.lua;
   packages = {
     plugins = {
       start = with pkgs.vimPlugins; [
