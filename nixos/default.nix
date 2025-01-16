@@ -18,7 +18,6 @@
       ];
 
       etc."xdg/nvim/lua".source = ../nvim/lua;
-      etc."xdg/nvim/init.lua".source = ./init.lua; # seems like the nix option configure.customRC doesn't write this?
     };
   };
 }
