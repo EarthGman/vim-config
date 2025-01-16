@@ -13,7 +13,12 @@
         harpoon
         undotree
         vim-fugitive
-      ] ++ (with pkgs.vimPlugins.nvim-treesitter-parsers; [
+        alpha-nvim
+        which-key-nvim
+      ] ++ (with pkgs.extraVimPlugins; [
+        blink-cmp
+        nvim-vauge
+      ]) ++ (with pkgs.vimPlugins.nvim-treesitter-parsers; [
         nix
         lua
       ]);
