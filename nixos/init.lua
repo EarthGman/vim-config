@@ -7,4 +7,4 @@ require("plugins.autopairs")
 require("lsp.nil")
 require("lsp.lua_ls")
 
-require("themes.vauge")
+require("themes.vague")
