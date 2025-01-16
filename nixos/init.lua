@@ -1,5 +1,4 @@
 require("core.options")
-require("plugins.undotree")
 
 require("plugins.blink-cmp")
 require("plugins.alpha")
