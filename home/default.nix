@@ -27,7 +27,6 @@ in
         gruvbox # pretty good theme
         harpoon # customizable file finder
         undotree # view undo history
-        vim-fugitive # git stuff
         nvim-surround # https://github.com/kylechui/nvim-surround/
         alpha-nvim
 

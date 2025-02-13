@@ -16,7 +16,6 @@
         nvim-lspconfig
         harpoon
         undotree
-        vim-fugitive
         alpha-nvim
         mini-icons
         which-key-nvim

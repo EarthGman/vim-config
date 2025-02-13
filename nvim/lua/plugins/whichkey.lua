@@ -24,9 +24,6 @@ wk.add({
 	{ "<leader>fb",      telescope.buffers,             desc = "Find Buffers" },
 	{ "<leader>lg",      telescope.live_grep,           desc = "Live Grep" },
 
-	-- fugitive
-	{ "<leader>gs",      "<cmd>Git<cr>",                desc = "Git Status" },
-
 	-- harpoon keymap
 	{ "<leader>a",       mark.add_file,                 desc = "Add file to Harpoon" },
 	{ "<leader>hm",      ui.toggle_quick_menu,          desc = "Harpoon Menu" },
