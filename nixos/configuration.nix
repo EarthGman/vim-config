@@ -14,8 +14,8 @@
         mini-icons
         nvim-autopairs
         nvim-lspconfig
-        nvim-snacks
         nvim-treesitter
+        snacks-nvim
         undotree
         which-key-nvim
       ] ++ (with pkgs.extraVimPlugins; [
