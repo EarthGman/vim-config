@@ -1,8 +1,8 @@
 local wk = require("which-key")
 local ui = require("harpoon.ui")
 local mark = require("harpoon.mark")
--- local picker = Snacks.picker
-local telescope = require("telescope.builtin")
+local picker = require("snacks").picker
+-- local telescope = require("telescope.builtin")
 
 wk.add({
 	-- globals
@@ -20,15 +20,15 @@ wk.add({
 	{ "<A-k>",           proxy = "<C-w>k",              desc = "Focus Split Up" },
 	{ "<A-l>",           proxy = "<C-w>l",              desc = "Focus Split Right" },
 
-	-- telescope
-	{ "<leader><Space>", telescope.find_files,          desc = "Find Files" },
-	{ "<leader>fb",      telescope.buffers,             desc = "Find Buffers" },
-	{ "<leader>lg",      telescope.live_grep,           desc = "Live Grep" },
-
-	-- { "<leader><Space>", picker.smart,                  desc = "Find Files" },
-	-- { "<leader>fb",      picker.buffers,                desc = "Find Buffers" },
-	-- { "<leader>lg",      picker.grep,                   desc = "Live Grep" },
-	-- { "<leader>ch",      picker.command_history,        desc = "Command History" },
+	-- picker
+	{ "<leader><Space>", picker.files,                  desc = "Find Files" },
+	{ "<leader>fb",      picker.buffers,                desc = "Find Buffers" },
+	{ "<leader>lg",      picker.grep,                   desc = "Live Grep" },
+	{ "<leader>ch",      picker.command_history,        desc = "Command History" },
+	{ "<leader>fp",      picker.projects,               desc = "Find Projects" },
+	{ "<leader>lk",      picker.keymaps,                desc = "List Keymaps" },
+	{ "<leader>uh",      picker.undo,                   desc = "Undo History" },
+	{ "<leader>ct",      picker.colorschemes,           desc = "Change Theme" },
 
 	-- harpoon keymap
 	{ "<leader>a",       mark.add_file,                 desc = "Add file to Harpoon" },
@@ -37,7 +37,4 @@ wk.add({
 	{ "<C-2>",           function() ui.nav_file(2) end, desc = "Harpoon Entry 2" },
 	{ "<C-3>",           function() ui.nav_file(3) end, desc = "Harpoon Entry 3" },
 	{ "<C-4>",           function() ui.nav_file(4) end, desc = "Harpoon Entry 4" },
-
-	-- undotree
-	{ "<leader>u",       "<cmd>UndotreeToggle<cr>",     desc = "Undotree Toggle" },
 })

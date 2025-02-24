@@ -30,6 +30,7 @@ in
         nvim-surround # https://github.com/kylechui/nvim-surround/
         alpha-nvim
         snacks-nvim # QOL
+        lazy-nvim # package manager
 
         nvim-treesitter-parsers.nix
         nvim-treesitter-parsers.lua
