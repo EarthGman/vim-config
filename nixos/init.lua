@@ -6,5 +6,3 @@ require("plugins.snacks")
 
 require("lsp.nil")
 require("lsp.lua_ls")
-
-print("done")

@@ -19,6 +19,7 @@
       ];
 
       etc."xdg/nvim/lua".source = ../nvim/lua;
+      etc."xdg/nvim/init.lua".source = ./init.lua;
     };
   };
 }
