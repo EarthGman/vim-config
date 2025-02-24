@@ -30,7 +30,6 @@ in
         nvim-treesitter-parsers.nix
         nvim-treesitter # treesitter configuration
         snacks-nvim # QOL
-        undotree # view undo history
         which-key-nvim # keybind manager
       ] ++ (with pkgs.extraVimPlugins; [
         # locally derived vim plugings

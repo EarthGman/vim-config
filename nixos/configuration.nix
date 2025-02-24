@@ -1,10 +1,6 @@
 { pkgs, ... }:
 {
-  customRC = ''
-    lua << EOF
-      ${(builtins.readFile ./init.lua)};
-    EOF
-  '';
+  customRC = "luafile ${./init.lua}";
   packages = {
     plugins = {
       start = with pkgs.vimPlugins; [
@@ -16,7 +12,6 @@
         nvim-lspconfig
         nvim-treesitter
         snacks-nvim
-        undotree
         which-key-nvim
       ] ++ (with pkgs.extraVimPlugins; [
         blink-cmp
