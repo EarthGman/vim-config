@@ -15,30 +15,23 @@ in
       vimdiffAlias = mkDefault true;
 
       plugins = with pkgs.vimPlugins; [
-        which-key-nvim # keybind manager
-        telescope-nvim # file search tui
-        plenary-nvim # popular dependency needed by most vim plugins
-        nvim-treesitter # treesitter configuration
-        nvim-autopairs # auto match braces
-        nvim-colorizer-lua # preview color codes
-        lspkind-nvim # plugin to provide icons for various lsps 
-        nvim-lspconfig # allow configuration of an lsp using lua
-        mini-icons
         gruvbox # pretty good theme
         harpoon # customizable file finder
-        undotree # view undo history
-        nvim-surround # https://github.com/kylechui/nvim-surround/
-        alpha-nvim
-        snacks-nvim # QOL
         lazy-nvim # package manager
-
-        nvim-treesitter-parsers.nix
-        nvim-treesitter-parsers.lua
-
-        nvim-treesitter-parsers.cpp
-
+        lspkind-nvim # plugin to provide icons for various lsps 
+        mini-icons
+        nvim-autopairs # auto match braces
+        nvim-colorizer-lua # preview color codes
         nvim-gdb
-
+        nvim-lspconfig # allow configuration of an lsp using lua
+        nvim-surround # https://github.com/kylechui/nvim-surround/
+        nvim-treesitter-parsers.cpp
+        nvim-treesitter-parsers.lua
+        nvim-treesitter-parsers.nix
+        nvim-treesitter # treesitter configuration
+        snacks-nvim # QOL
+        undotree # view undo history
+        which-key-nvim # keybind manager
       ] ++ (with pkgs.extraVimPlugins; [
         # locally derived vim plugings
         nvim-vauge

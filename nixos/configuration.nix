@@ -8,16 +8,15 @@
   packages = {
     plugins = {
       start = with pkgs.vimPlugins; [
-        plenary-nvim
-        telescope-nvim
-        nvim-treesitter
-        nvim-autopairs
-        lspkind-nvim
-        nvim-lspconfig
         harpoon
-        undotree
-        alpha-nvim
+        lazy-nvim
+        lspkind-nvim
         mini-icons
+        nvim-autopairs
+        nvim-lspconfig
+        nvim-snacks
+        nvim-treesitter
+        undotree
         which-key-nvim
       ] ++ (with pkgs.extraVimPlugins; [
         blink-cmp
