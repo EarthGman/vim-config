@@ -1,5 +1,15 @@
 { pkgs, ... }:
 {
+  customRC = ''
+    lua require("core.options")
+    lua require("plugins.blink-cmp")
+    lua require("plugins.autopairs")
+    lua require("plugins.whichkey")
+    lua require("plugins.snacks")
+
+    lua require("lsp.nil")
+    lua require("lsp.lua_ls")
+  '';
   packages = {
     plugins = {
       start = with pkgs.vimPlugins; [
