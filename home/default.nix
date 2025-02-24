@@ -29,6 +29,7 @@ in
         undotree # view undo history
         nvim-surround # https://github.com/kylechui/nvim-surround/
         alpha-nvim
+        snacks-nvim # QOL
 
         nvim-treesitter-parsers.nix
         nvim-treesitter-parsers.lua

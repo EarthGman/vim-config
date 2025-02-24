@@ -1,6 +1,7 @@
 local wk = require("which-key")
 local ui = require("harpoon.ui")
 local mark = require("harpoon.mark")
+-- local picker = Snacks.picker
 local telescope = require("telescope.builtin")
 
 wk.add({
@@ -23,6 +24,11 @@ wk.add({
 	{ "<leader><Space>", telescope.find_files,          desc = "Find Files" },
 	{ "<leader>fb",      telescope.buffers,             desc = "Find Buffers" },
 	{ "<leader>lg",      telescope.live_grep,           desc = "Live Grep" },
+
+	-- { "<leader><Space>", picker.smart,                  desc = "Find Files" },
+	-- { "<leader>fb",      picker.buffers,                desc = "Find Buffers" },
+	-- { "<leader>lg",      picker.grep,                   desc = "Live Grep" },
+	-- { "<leader>ch",      picker.command_history,        desc = "Command History" },
 
 	-- harpoon keymap
 	{ "<leader>a",       mark.add_file,                 desc = "Add file to Harpoon" },
