@@ -2,6 +2,10 @@ require("snacks").setup({
 	picker = { enabled = true },
 	dashboard = {
 		enabled = true,
+                sections = {
+                  { section = "header" },
+                  { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
+		},
 		preset = {
 			header = [[
         GGGGGGGGGGGGG                                                            
@@ -21,6 +25,7 @@ G:::::G        G::::Gm::::m   m::::m   m::::m a::::aaaa::::::a  n::::n    n::::n
      GGG::::::GGG:::Gm::::m   m::::m   m::::m a::::::::::aa:::a n::::n    n::::n
         GGGGGG   GGGGmmmmmm   mmmmmm   mmmmmm  aaaaaaaaaa  aaaa nnnnnn    nnnnnn
 			]],
+                        
 		},
 	},
 })
