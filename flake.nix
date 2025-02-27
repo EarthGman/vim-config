@@ -29,10 +29,10 @@
         };
         devShells.default = pkgs.mkShell {
           nativeBuildInputs = import ./plugins.nix { inherit pkgs; };
-          #TODO: setting config home causes some plugins to not work (lazygit)
+          # shell into the root of the project otherwise this wont work
           shellHook = ''
-            export XDG_CONFIG_HOME=$(pwd)
-            nvim -u $XDG_CONFIG_HOME/nvim/init.lua
+            WORKING_DIRECTORY=$(pwd)
+            nvim -u $WORKING_DIRECTORY/nvim/init.lua
           '';
         };
       };
