@@ -14,9 +14,9 @@ with pkgs.vimPlugins; [
   nvim-treesitter # treesitter configuration
   snacks-nvim # QOL
   which-key-nvim # keybind manager
+  blink-cmp
 ] ++ (with pkgs.extraVimPlugins; [
   # locally derived vim plugings
   nvim-vauge
-  blink-cmp
 ])
 
