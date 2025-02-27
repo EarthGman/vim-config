@@ -4,23 +4,53 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     blink-cmp.url = "github:saghen/blink.cmp";
+    flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
-  outputs = { ... } @ inputs:
-    {
-      homeManager = rec {
-        neovim = import ./home;
-        default = neovim;
+  outputs = { self, flake-parts, ... } @ inputs:
+    let
+      inherit (flake-parts.lib) mkFlake;
+      inherit (self) outputs;
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "aarch64-darwin"
+      ];
+    in
+    mkFlake { inherit inputs; } {
+      inherit systems;
+      perSystem = { pkgs, system, ... }: {
+        # flake parts does not have built in support for applying overlays to the pkgs argument
+        _module.args.pkgs = import inputs.nixpkgs {
+          inherit system;
+          overlays = [
+            outputs.overlay.default
+          ];
+        };
+        devShells.default = pkgs.mkShell {
+          nativeBuildInputs = import ./plugins.nix { inherit pkgs; };
+          #TODO: setting config home causes some plugins to not work (lazygit)
+          shellHook = ''
+            export XDG_CONFIG_HOME=$(pwd)
+            nvim -u $XDG_CONFIG_HOME/nvim/init.lua
+          '';
+        };
       };
+      flake = {
+        homeManager = rec {
+          neovim = import ./home;
+          default = neovim;
+        };
 
-      nixos = rec {
-        neovim = import ./nixos;
-        default = neovim;
-      };
+        nixos = rec {
+          neovim = import ./nixos;
+          default = neovim;
+        };
 
-      overlay = rec {
-        extraPlugins = final: _prev: import ./extra-plugins { pkgs = final; inherit inputs; };
-        default = extraPlugins;
+        overlay = rec {
+          extraPlugins = final: _prev: import ./extra-plugins { pkgs = final; inherit inputs; };
+          default = extraPlugins;
+        };
       };
     };
 }

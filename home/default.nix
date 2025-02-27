@@ -14,28 +14,7 @@ in
       viAlias = mkDefault true;
       vimdiffAlias = mkDefault true;
 
-      plugins = with pkgs.vimPlugins; [
-        gruvbox # pretty good theme
-        harpoon # customizable file finder
-        lazy-nvim # package manager
-        lspkind-nvim # plugin to provide icons for various lsps 
-        mini-icons
-        nvim-autopairs # auto match braces
-        nvim-colorizer-lua # preview color codes
-        nvim-gdb
-        nvim-lspconfig # allow configuration of an lsp using lua
-        nvim-surround # https://github.com/kylechui/nvim-surround/
-        nvim-treesitter-parsers.cpp
-        nvim-treesitter-parsers.lua
-        nvim-treesitter-parsers.nix
-        nvim-treesitter # treesitter configuration
-        snacks-nvim # QOL
-        which-key-nvim # keybind manager
-      ] ++ (with pkgs.extraVimPlugins; [
-        # locally derived vim plugings
-        nvim-vauge
-        blink-cmp
-      ]);
+      plugins = import ../plugins.nix { inherit pkgs; };
 
       extraPackages = with pkgs; [
         # packages accessible to vim but not placed on the main shell path
