@@ -18,6 +18,9 @@ let
     lua-language-server
     stylua
     lazygit
+    fd
+    fzf
+    ripgrep
   ];
 
   foldPlugins = builtins.foldl'
