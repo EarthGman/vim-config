@@ -27,26 +27,14 @@
             outputs.overlay.default
           ];
         };
+        packages.default = pkgs.callPackage ./neovim.nix { inherit pkgs; };
         devShells.default = pkgs.mkShell {
-          nativeBuildInputs = import ./plugins.nix { inherit pkgs; };
-          # shell into the root of the project otherwise this wont work
           shellHook = ''
-            WORKING_DIRECTORY=$(pwd)
-            nvim -u $WORKING_DIRECTORY/nvim/init.lua
+            ${outputs.packages.${system}.default}/bin/nvim
           '';
         };
       };
       flake = {
-        homeManager = rec {
-          neovim = import ./home;
-          default = neovim;
-        };
-
-        nixos = rec {
-          neovim = import ./nixos;
-          default = neovim;
-        };
-
         overlay = rec {
           extraPlugins = final: _prev: import ./extra-plugins { pkgs = final; inherit inputs; };
           default = extraPlugins;

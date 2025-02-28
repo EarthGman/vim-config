@@ -1,5 +1,10 @@
 require("snacks").setup({
-	picker = { enabled = true },
+	picker = {
+         enabled = true,
+        },
+        explorer = {
+         replace_netrw = true,
+        },
 	dashboard = {
 		enabled = true,
                 sections = {

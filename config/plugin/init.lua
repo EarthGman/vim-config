@@ -1,0 +1,8 @@
+require("config.core")
+require("config.blink-cmp")
+require("config.autopairs")
+require("config.colorizer")
+require("config.nil")
+require("config.snacks")
+require("config.whichkey")
+require("config.lua_ls")

@@ -11,7 +11,6 @@ wk.add({
 		{ "<leader>q", "<cmd>q<cr>", desc = "Quit" },
 		{ "<leader>w", "<cmd>w<cr>", desc = "Write" },
 	},
-	{ "<leader>pv",      "<cmd>Ex<cr>",                    desc = "Project View" },
 	{ "<leader>vs",      "<cmd>vsplit<cr>",                desc = "Vertical Split" },
 	{ "<leader>hs",      "<cmd>sp<cr>",                    desc = "Horizontal Split" },
 	{ "<leader>bd",      "<cmd>bd<cr>",                    desc = "Buffer Delete" },
