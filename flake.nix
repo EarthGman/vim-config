@@ -30,7 +30,7 @@
         packages.default = pkgs.callPackage ./neovim.nix { inherit pkgs; };
         apps.default = {
           type = "app";
-          program = pkgs.callPackage ./neovim.nix { inherit pkgs; };
+          program = "${outputs.packages.${system}.default}/bin/nvim";
         };
         devShells.default = pkgs.mkShell {
           shellHook = ''
