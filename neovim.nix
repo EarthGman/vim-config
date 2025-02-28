@@ -49,7 +49,7 @@ let
   '';
 in
 symlinkJoin {
-  name = "neovim-custom";
+  name = "nvim";
   paths = [ neovim-unwrapped ];
 
   nativeBuildInputs = [ makeWrapper ];
