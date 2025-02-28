@@ -28,7 +28,10 @@
           ];
         };
         packages.default = pkgs.callPackage ./neovim.nix { inherit pkgs; };
-        apps.default = pkgs.callPackage ./neovim.nix { inherit pkgs; };
+        apps.default = {
+          type = "app";
+          program = pkgs.callPackage ./neovim.nix { inherit pkgs; };
+        };
         devShells.default = pkgs.mkShell {
           shellHook = ''
             ${outputs.packages.${system}.default}/bin/nvim
