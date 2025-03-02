@@ -12,17 +12,7 @@ let
 
   startPlugins = import ./plugins.nix { inherit pkgs; };
 
-  extraPackages = with pkgs; [
-    llvmPackages.clang-unwrapped
-    nil
-    nixpkgs-fmt
-    lua-language-server
-    stylua
-    lazygit
-    fd
-    fzf
-    ripgrep
-  ];
+  extraPackages = import ./dependencies.nix { inherit pkgs; };
 
   foldPlugins = builtins.foldl'
     (

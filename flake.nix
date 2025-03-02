@@ -28,11 +28,11 @@
           ];
         };
         packages.default = pkgs.callPackage ./neovim.nix { inherit pkgs; };
-        devShells.default = pkgs.mkShell {
-          shellHook = ''
-            ${outputs.packages.${system}.default}/bin/nvim
-          '';
-        };
+        # devShells.default = pkgs.mkShell {
+        #   shellHook = ''
+        #     ${outputs.packages.${system}.default}/bin/nvim .
+        #   '';
+        # };
       };
       flake = {
         overlay = rec {
