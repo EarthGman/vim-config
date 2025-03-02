@@ -3,7 +3,6 @@
 , neovim-unwrapped
 , makeWrapper
 , runCommandLocal
-, vimPlugins
 , lib
 ,
 }:
@@ -47,7 +46,7 @@ symlinkJoin {
   postBuild = ''
         wrapProgram $out/bin/nvim \
           --add-flags '-u' \
-          --add-flags '${./config/plugin/init.lua}' \
+          --add-flags '${./config/init.lua}' \
           --add-flags '--cmd' \
           --add-flags "'set packpath^=${packpath} | set runtimepath^=${packpath}'" \
           --set-default NVIM_APPNAME nvim \

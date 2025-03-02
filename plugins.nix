@@ -3,6 +3,7 @@ with pkgs.vimPlugins; [
   harpoon # customizable file finder
   lazy-nvim # package manager
   lspkind-nvim # plugin to provide icons for various lsps 
+  null-ls-nvim
   mini-icons
   nvim-autopairs # auto match braces
   nvim-colorizer-lua # preview color codes

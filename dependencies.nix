@@ -6,6 +6,9 @@ with pkgs; [
   nixpkgs-fmt
   lua-language-server
   stylua
+  pyright
+  yapf
+
   lazygit
   fd
   fzf
