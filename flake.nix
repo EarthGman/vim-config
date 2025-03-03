@@ -24,19 +24,18 @@
         _module.args.pkgs = import inputs.nixpkgs {
           inherit system;
           overlays = [
-            outputs.overlay.default
+            outputs.overlays.default
           ];
         };
-        packages.default = pkgs.callPackage ./neovim.nix { inherit pkgs; };
-        # devShells.default = pkgs.mkShell {
-        #   shellHook = ''
-        #     ${outputs.packages.${system}.default}/bin/nvim .
-        #   '';
-        # };
+        packages = rec {
+          # TODO: build some lighter versions of neovim for servers or iso images
+          nvim = pkgs.callPackage ./neovim.nix { inherit pkgs; packageName = "nvim"; };
+          default = nvim;
+        };
       };
       flake = {
-        overlay = rec {
-          extraPlugins = final: _prev: import ./extra-plugins { pkgs = final; inherit inputs; };
+        overlays = rec {
+          extraPlugins = final: prev: import ./extra-plugins { pkgs = final; inherit inputs; };
           default = extraPlugins;
         };
       };

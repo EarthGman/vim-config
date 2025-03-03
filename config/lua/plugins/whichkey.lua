@@ -14,6 +14,7 @@ wk.add({
 	{ "<leader>vs",      "<cmd>vsplit<cr>",                desc = "Vertical Split" },
 	{ "<leader>hs",      "<cmd>sp<cr>",                    desc = "Horizontal Split" },
 	{ "<leader>bd",      "<cmd>bd<cr>",                    desc = "Buffer Delete" },
+	{ "<leader>x",       "<cmd>x<cr>",                     desc = "Save and Quit" },
 	{ "<A-h>",           proxy = "<C-w>h",                 desc = "Focus Split Left" },
 	{ "<A-j>",           proxy = "<C-w>j",                 desc = "Focus Split Down" },
 	{ "<A-k>",           proxy = "<C-w>k",                 desc = "Focus Split Up" },

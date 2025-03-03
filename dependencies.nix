@@ -8,9 +8,12 @@ with pkgs; [
   stylua
   pyright
   yapf
+  gopls
+  go
 
   lazygit
   fd
   fzf
   ripgrep
+  tree-sitter
 ]

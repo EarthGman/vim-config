@@ -1,5 +1,6 @@
 { symlinkJoin
 , pkgs
+, packageName
 , neovim-unwrapped
 , makeWrapper
 , runCommandLocal
@@ -7,7 +8,7 @@
 ,
 }:
 let
-  packageName = "mypackage";
+  inherit packageName;
 
   startPlugins = import ./plugins.nix { inherit pkgs; };
 
@@ -35,11 +36,11 @@ let
       (plugin: "ln -vsfT ${plugin} $out/pack/${packageName}/start/${lib.getName plugin}")
       startPluginsWithDeps
     }
-
   '';
+
 in
 symlinkJoin {
-  name = "nvim";
+  name = packageName;
   paths = [ neovim-unwrapped ];
 
   nativeBuildInputs = [ makeWrapper ];

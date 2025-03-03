@@ -1,10 +1,10 @@
 { pkgs, ... }:
 with pkgs.vimPlugins; [
   harpoon # customizable file finder
-  lazy-nvim # package manager
   lspkind-nvim # plugin to provide icons for various lsps 
   null-ls-nvim
   mini-icons
+  nvim-web-devicons
   nvim-autopairs # auto match braces
   nvim-colorizer-lua # preview color codes
   nvim-lspconfig # allow configuration of an lsp using lua
