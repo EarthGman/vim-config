@@ -13,6 +13,7 @@ with pkgs.vimPlugins; [
   nvim-treesitter-parsers.lua
   nvim-treesitter-parsers.nix
   nvim-treesitter # treesitter configuration
+  nvim-treesitter-context
   snacks-nvim # QOL
   which-key-nvim # keybind manager
   blink-cmp
