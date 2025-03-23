@@ -5,7 +5,6 @@ require("plugins.autopairs")
 require("plugins.colorizer")
 require("plugins.snacks")
 require("plugins.whichkey")
-require("plugins.treesitter-context")
 
 require("lsp.nil")
 require("lsp.lua_ls")

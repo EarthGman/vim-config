@@ -1,9 +1,8 @@
-local snacks = require("snacks")
 local wk = require("which-key")
 local ui = require("harpoon.ui")
 local mark = require("harpoon.mark")
 local picker = require("snacks").picker
-local tsc = require("treesitter-context")
+-- local tsc = require("treesitter-context"
 
 wk.add({
 	-- globals
@@ -16,7 +15,7 @@ wk.add({
 	{ "<leader>hs",      "<cmd>sp<cr>",                    desc = "Horizontal Split" },
 	{ "<leader>bd",      "<cmd>bd<cr>",                    desc = "Buffer Delete" },
 	{ "<leader>x",       "<cmd>x<cr>",                     desc = "Save and Quit" },
-	{ "<leader>tc",      tsc.toggle(),                     desc = "Toggle Treesitter Context" },
+	{ "<leader>vt",      "<cmd>vert term<cr>",             desc = "Vertical Terminal" },
 	{ "<A-h>",           proxy = "<C-w>h",                 desc = "Focus Split Left" },
 	{ "<A-j>",           proxy = "<C-w>j",                 desc = "Focus Split Down" },
 	{ "<A-k>",           proxy = "<C-w>k",                 desc = "Focus Split Up" },
