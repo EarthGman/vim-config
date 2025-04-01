@@ -1,7 +1,7 @@
 # extra dependencies, language servers, tools, etc
 { pkgs, ... }:
 with pkgs; [
-  llvmPackages.clang-unwrapped
+  llvmPackages.clang-tools
   nil
   nixpkgs-fmt
   lua-language-server
