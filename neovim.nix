@@ -1,6 +1,8 @@
 { symlinkJoin
-, pkgs
 , packageName
+, init
+, startPlugins
+, dependencies
 , neovim-unwrapped
 , makeWrapper
 , runCommandLocal
@@ -9,10 +11,6 @@
 }:
 let
   inherit packageName;
-
-  startPlugins = import ./plugins.nix { inherit pkgs; };
-
-  extraPackages = import ./dependencies.nix { inherit pkgs; };
 
   foldPlugins = builtins.foldl'
     (
@@ -47,11 +45,11 @@ symlinkJoin {
   postBuild = ''
         wrapProgram $out/bin/nvim \
           --add-flags '-u' \
-          --add-flags '${./config/init.lua}' \
+          --add-flags '${init}' \
           --add-flags '--cmd' \
           --add-flags "'set packpath^=${packpath} | set runtimepath^=${packpath}'" \
           --set-default NVIM_APPNAME nvim \
-    			--suffix PATH : ${lib.makeBinPath extraPackages}
+    			--suffix PATH : ${lib.makeBinPath dependencies}
   '';
 
   passthru = {

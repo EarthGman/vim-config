@@ -27,9 +27,32 @@
             outputs.overlays.default
           ];
         };
+
         packages = rec {
-          # TODO: build some lighter versions of neovim for servers or iso images
-          nvim = pkgs.callPackage ./neovim.nix { inherit pkgs; packageName = "nvim"; };
+          nvim = pkgs.callPackage ./neovim.nix {
+            packageName = "nvim";
+            startPlugins = import ./dependencies/nvim/startplugins.nix { inherit pkgs; };
+            dependencies = import ./dependencies/nvim/extrapackages.nix { inherit pkgs; };
+            init = ./config/init.lua;
+          };
+          nvim-lite = pkgs.callPackage ./neovim.nix {
+            packageName = "nvim-lite";
+            startPlugins = import ./dependencies/nvim-lite/startplugins.nix { inherit pkgs; };
+            dependencies = import ./dependencies/nvim-lite/extrapackages.nix { inherit pkgs; };
+            init = ./config/init-lite.lua;
+          };
+          default = nvim;
+        };
+
+        apps = rec {
+          nvim = {
+            type = "app";
+            program = "${self.packages.${system}.nvim}/bin/nvim";
+          };
+          nvim-lite = {
+            type = "app";
+            program = "${self.packages.${system}.nvim-lite}/bin/nvim";
+          };
           default = nvim;
         };
       };
