@@ -4,7 +4,7 @@ let
 in
 {
   extraVimPlugins = {
-    nvim-vauge = callPackage ./nvim-vauge.nix { };
+    nvim-vague = callPackage ./nvim-vague.nix { };
     blink-cmp = inputs.blink-cmp.packages.${system}.blink-cmp;
   };
 }

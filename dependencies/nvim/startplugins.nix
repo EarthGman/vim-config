@@ -18,6 +18,6 @@ with pkgs.vimPlugins; [
   blink-cmp
 ] ++ (with pkgs.extraVimPlugins; [
   # locally derived vim plugings
-  nvim-vauge
+  nvim-vague
 ])
 

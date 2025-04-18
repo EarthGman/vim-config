@@ -1,7 +1,7 @@
 { pkgs, vimUtils, ... }:
 
 vimUtils.buildVimPlugin {
-  name = "nvim-vauge";
+  name = "nvim-vague";
 
   src = pkgs.fetchFromGitHub {
     owner = "vague2k";
