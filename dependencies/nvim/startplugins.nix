@@ -1,8 +1,10 @@
 { pkgs, ... }:
-with pkgs.vimPlugins; [
+with pkgs.vimPlugins;
+[
+  fzf-lua
   harpoon # customizable file finder
-  lspkind-nvim # plugin to provide icons for various lsps 
-  null-ls-nvim
+  lspkind-nvim # plugin to provide icons for various lsps
+  none-ls-nvim
   mini-icons
   nvim-web-devicons
   nvim-autopairs # auto match braces
@@ -16,8 +18,8 @@ with pkgs.vimPlugins; [
   snacks-nvim # QOL
   which-key-nvim # keybind manager
   blink-cmp
-] ++ (with pkgs.extraVimPlugins; [
+]
+++ (with pkgs.extraVimPlugins; [
   # locally derived vim plugings
   nvim-vague
 ])
-
