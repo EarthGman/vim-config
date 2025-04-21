@@ -3,8 +3,8 @@ local opt = vim.opt
 vim.g.mapleader = " "
 vim.o.background = "dark"
 vim.cmd.colorscheme "vague"
-opt.list = true
-opt.listchars = [[trail:·,tab:⇒\ ]]
+-- opt.list = true
+-- opt.listchars = [[trail:·,tab:⇒\ ]]
 vim.wo.relativenumber = true
 vim.wo.number = true
 opt.tabstop = 2
