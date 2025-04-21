@@ -8,6 +8,6 @@ with pkgs.vimPlugins; [
   which-key-nvim # keybind manager
 ] ++ (with pkgs.extraVimPlugins; [
   # locally derived vim plugings
-  nvim-vauge
+  nvim-vague
 ])
 
