@@ -10,10 +10,4 @@ with pkgs; [
   yapf
   gopls
   go
-
-  lazygit
-  fd
-  fzf
-  ripgrep
-  tree-sitter
 ]

@@ -1,9 +1,11 @@
 local lspc = require("lspconfig")
 lspc.lua_ls.setup {
 	settings = {
+		Completion = { callSnippet = 'Replace' },
 		Lua = {
 			diagnostics = {
 				globals = { 'vim' },
+				disable = { 'missing-fields' },
 			},
 			workspace = {
 				-- make Neovim runtime files available to the server

@@ -28,21 +28,28 @@
           ];
         };
 
-        packages = rec {
-          nvim = pkgs.callPackage ./neovim.nix {
-            packageName = "nvim";
-            startPlugins = import ./dependencies/nvim/startplugins.nix { inherit pkgs; };
-            dependencies = import ./dependencies/nvim/extrapackages.nix { inherit pkgs; };
-            init = ./config/init.lua;
+        packages =
+          let
+            sharedStartPlugins = import ./packages/shared/startplugins.nix { inherit pkgs; };
+            sharedExtraPackages = import ./packages/shared/extrapackages.nix { inherit pkgs; };
+          in
+          rec {
+            nvim = pkgs.callPackage ./neovim.nix {
+              packageName = "nvim";
+              startPlugins = import ./packages/nvim/startplugins.nix { inherit pkgs; } ++ sharedStartPlugins;
+              dependencies = import ./packages/nvim/extrapackages.nix { inherit pkgs; } ++ sharedExtraPackages;
+              init = ./packages/nvim/init.lua;
+            };
+
+            nvim-lite = pkgs.callPackage ./neovim.nix {
+              packageName = "nvim-lite";
+              startPlugins = import ./packages/nvim-lite/startplugins.nix { inherit pkgs; } ++ sharedStartPlugins;
+              dependencies = import ./pacakges/nvim-lite/extrapackages.nix { inherit pkgs; } ++ sharedExtraPackages;
+              init = ./packages/nvim-lite/init.lua;
+            };
+
+            default = nvim;
           };
-          nvim-lite = pkgs.callPackage ./neovim.nix {
-            packageName = "nvim-lite";
-            startPlugins = import ./dependencies/nvim-lite/startplugins.nix { inherit pkgs; };
-            dependencies = import ./dependencies/nvim-lite/extrapackages.nix { inherit pkgs; };
-            init = ./config/init-lite.lua;
-          };
-          default = nvim;
-        };
 
         apps = rec {
           nvim = {

@@ -35,7 +35,6 @@ let
       startPluginsWithDeps
     }
   '';
-
 in
 symlinkJoin {
   name = packageName;

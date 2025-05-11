@@ -1,21 +1,7 @@
-require("snacks").setup({
-	picker = {
-         enabled = true,
-        },
-        explorer = {
-         replace_netrw = true,
-        },
-	dashboard = {
-		enabled = true,
-                sections = {
-                  { section = "header" },
-		  { icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
-                  { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
-		},
-		preset = {
-			header = [[
-        GGGGGGGGGGGGG                                                            
-     GGG::::::::::::G                                                            
+local banners = {
+	default = [[
+        GGGGGGGGGGGGG                                                           
+     GGG::::::::::::G                                                           
    GG:::::::::::::::G                                                           
   G:::::GGGGGGGG::::G                                                           
  G:::::G       GGGGGG   mmmmmmm    mmmmmmm     aaaaaaaaaaaaa  nnnn  nnnnnnnn    
@@ -30,8 +16,14 @@ G:::::G        G::::Gm::::m   m::::m   m::::m a::::aaaa::::::a  n::::n    n::::n
    GG:::::::::::::::Gm::::m   m::::m   m::::ma:::::aaaa::::::a  n::::n    n::::n
      GGG::::::GGG:::Gm::::m   m::::m   m::::m a::::::::::aa:::a n::::n    n::::n
         GGGGGG   GGGGmmmmmm   mmmmmm   mmmmmm  aaaaaaaaaa  aaaa nnnnnn    nnnnnn
-			]],
-                        
-		},
+	]],
+}
+return {
+	enabled = true,
+	sections = {
+		{ section = "header" },
+		{ icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
+		{ icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
 	},
-})
+	preset = { header = banners.default },
+}
