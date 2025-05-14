@@ -44,7 +44,7 @@
             nvim-lite = pkgs.callPackage ./neovim.nix {
               packageName = "nvim-lite";
               startPlugins = import ./packages/nvim-lite/startplugins.nix { inherit pkgs; } ++ sharedStartPlugins;
-              dependencies = import ./pacakges/nvim-lite/extrapackages.nix { inherit pkgs; } ++ sharedExtraPackages;
+              dependencies = import ./packages/nvim-lite/extrapackages.nix { inherit pkgs; } ++ sharedExtraPackages;
               init = ./packages/nvim-lite/init.lua;
             };
 
