@@ -1,17 +1,17 @@
 { symlinkJoin
 , packageName
-, init
-, startPlugins
+, startPlugins ? [ ]
+, optPlugins ? [ ]
 , dependencies
 , neovim-unwrapped
 , makeWrapper
-, runCommandLocal
+,  runCommandLocal
 , lib
 ,
 }:
 let
   inherit packageName;
-
+  init = ./packages/${packageName}/start/init.lua;
   foldPlugins = builtins.foldl'
     (
       acc: next:
@@ -22,19 +22,24 @@ let
         ++ (foldPlugins (next.dependencies or [ ]))
     ) [ ];
 
-  startPluginsWithDeps = lib.unique (foldPlugins startPlugins);
-
-  packpath = runCommandLocal "packpath" { } ''
-    mkdir -p $out/pack/${packageName}/{start,opt}
-
-    ln -vsfT ${./config} $out/pack/${packageName}/start/config
+  linkPlugins = type: plugins: ''
     ${
       lib.concatMapStringsSep
       "\n"
-      (plugin: "ln -vsfT ${plugin} $out/pack/${packageName}/start/${lib.getName plugin}")
-      startPluginsWithDeps
+      (plugin: "ln -vsfT ${plugin} $out/pack/${packageName}/${type}/${lib.getName plugin}")
+      plugins
     }
   '';
+
+  startPluginsWithDeps = lib.unique (foldPlugins startPlugins);
+
+  packpath = runCommandLocal "nvim-config" { } (''
+    mkdir -p $out/pack/${packageName}/{start,opt}
+
+    ln -vsfT ${./sharedModules/start/config} $out/pack/${packageName}/start/config
+  ''
+  + linkPlugins "start" startPluginsWithDeps
+  + linkPlugins "opt" optPlugins);
 in
 symlinkJoin {
   name = packageName;

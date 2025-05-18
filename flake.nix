@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     blink-cmp.url = "github:saghen/blink.cmp";
+    lzn.url = "github:nvim-neorocks/lz.n";
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
@@ -30,23 +31,31 @@
 
         packages =
           let
-            sharedStartPlugins = import ./packages/shared/startplugins.nix { inherit pkgs; };
-            sharedExtraPackages = import ./packages/shared/extrapackages.nix { inherit pkgs; };
+            inherit (pkgs) callPackage;
+            sharedStartPlugins = import ./sharedModules/start/plugins.nix { inherit pkgs; };
+            sharedOptPlugins = import ./sharedModules/opt/plugins.nix { inherit pkgs; };
+            sharedDependencies = import ./sharedModules/dependencies.nix { inherit pkgs; };
           in
           rec {
-            nvim = pkgs.callPackage ./neovim.nix {
+            nvim = callPackage ./neovim.nix {
               packageName = "nvim";
-              startPlugins = import ./packages/nvim/startplugins.nix { inherit pkgs; } ++ sharedStartPlugins;
-              dependencies = import ./packages/nvim/extrapackages.nix { inherit pkgs; } ++ sharedExtraPackages;
-              init = ./packages/nvim/init.lua;
+              startPlugins = import ./packages/nvim/start/plugins.nix { inherit pkgs; } ++ sharedStartPlugins;
+              optPlugins = import ./packages/nvim/opt/plugins.nix { inherit pkgs; } ++ sharedOptPlugins;
+              dependencies = import ./packages/nvim/dependencies.nix { inherit pkgs; } ++ sharedDependencies;
             };
 
-            nvim-lite = pkgs.callPackage ./neovim.nix {
+            nvim-lite = callPackage ./neovim.nix {
               packageName = "nvim-lite";
-              startPlugins = import ./packages/nvim-lite/startplugins.nix { inherit pkgs; } ++ sharedStartPlugins;
-              dependencies = import ./packages/nvim-lite/extrapackages.nix { inherit pkgs; } ++ sharedExtraPackages;
-              init = ./packages/nvim-lite/init.lua;
+              startPlugins = import ./packages/nvim-lite/start/plugins.nix { inherit pkgs; } ++ sharedStartPlugins;
+              optPlugins = sharedOptPlugins;
+              dependencies = import ./packages/nvim-lite/dependencies.nix { inherit pkgs; } ++ sharedDependencies;
             };
+
+            # extraPlugins
+            nvim-vague = callPackage ./extra-plugins/nvim-vague.nix { };
+            blink-cmp = inputs.blink-cmp.packages.${system}.blink-cmp;
+            direnv-nvim = callPackage ./extra-plugins/direnv-nvim.nix { };
+            lzn = inputs.lzn.packages.${system}.default;
 
             default = nvim;
           };
@@ -65,7 +74,11 @@
       };
       flake = {
         overlays = rec {
-          extraPlugins = final: prev: import ./extra-plugins { pkgs = final; inherit inputs; };
+          extraPlugins = final: prev: {
+            extraVimPlugins = import ./extra-plugins {
+              pkgs = final; inherit inputs;
+            };
+          };
           default = extraPlugins;
         };
       };

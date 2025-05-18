@@ -3,8 +3,8 @@ let
   inherit (pkgs) callPackage system;
 in
 {
-  extraVimPlugins = {
-    nvim-vague = callPackage ./nvim-vague.nix { };
-    blink-cmp = inputs.blink-cmp.packages.${system}.blink-cmp;
-  };
+  nvim-vague = callPackage ./nvim-vague.nix { };
+  blink-cmp = inputs.blink-cmp.packages.${system}.blink-cmp;
+  direnv-nvim = callPackage ./direnv-nvim.nix { };
+  lzn = inputs.lzn.packages.${system}.default;
 }

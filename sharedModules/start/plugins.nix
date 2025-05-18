@@ -6,10 +6,12 @@ with pkgs.vimPlugins;
   nvim-autopairs
   nvim-colorizer-lua
   nvim-surround
-  snacks-nvim
   which-key-nvim
   vim-tmux-navigator
   mini-trailspace
+  snacks-nvim
 ] ++ (with pkgs.extraVimPlugins; [
   nvim-vague
+  direnv-nvim
+  lzn
 ])
