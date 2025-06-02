@@ -7,4 +7,5 @@ in
   blink-cmp = inputs.blink-cmp.packages.${system}.blink-cmp;
   direnv-nvim = callPackage ./direnv-nvim.nix { };
   lzn = inputs.lzn.packages.${system}.default;
+  nvim-universal-clipboard = callPackage ./universal-clipboard.nix { };
 }

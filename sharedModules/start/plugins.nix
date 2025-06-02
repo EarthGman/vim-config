@@ -14,4 +14,5 @@ with pkgs.vimPlugins;
   nvim-vague
   direnv-nvim
   lzn
+  nvim-universal-clipboard
 ])
