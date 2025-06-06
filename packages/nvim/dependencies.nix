@@ -1,7 +1,10 @@
-# extra dependencies, language servers, tools, etc
+#extra dependencies, language servers, tools, etc
 { pkgs, ... }:
 with pkgs; [
-  llvmPackages.clang-unwrapped
+  gnutar
+  gitMinimal
+  curlMinimal
+  llvmPackages.clang-tools # needed for nvim to find C libraries
   nil
   nixpkgs-fmt
   lua-language-server
@@ -10,4 +13,11 @@ with pkgs; [
   yapf
   gopls
   go
+  nodejs-slim
+  rust-analyzer
+  rustfmt
+  rustc
+  cargo
+  lldb
+  glibc
 ]

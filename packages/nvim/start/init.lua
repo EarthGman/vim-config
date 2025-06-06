@@ -1,5 +1,6 @@
 require("globals")
 
+require("plugins.nvim-treesitter")
 require("blink.cmp")
 require("plugins.autopairs")
 require("plugins.colorizer")

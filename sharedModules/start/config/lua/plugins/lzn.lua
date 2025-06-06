@@ -12,7 +12,8 @@ require("lz.n").load {
 			"cpp",
 			"hpp",
 			"go",
-			"lua"
+			"lua",
+			"rust"
 		},
 
 		after = function()

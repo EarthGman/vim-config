@@ -5,4 +5,6 @@ with pkgs; [
   fzf
   ripgrep
   tree-sitter
+  ghostscript
+  ffmpeg
 ]
