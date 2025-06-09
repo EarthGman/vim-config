@@ -8,6 +8,7 @@ with pkgs.vimPlugins;
   nvim-surround # https://github.com/kylechui/nvim-surround/
   blink-cmp
   nvim-treesitter.withAllGrammars
+  tiny-inline-diagnostic-nvim
 ] ++ (with pkgs.extraVimPlugins; [
   direnv-nvim
 ])
