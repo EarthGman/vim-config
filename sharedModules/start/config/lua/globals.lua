@@ -3,6 +3,9 @@ local opt = vim.opt
 vim.g.mapleader = " "
 vim.o.background = "dark"
 vim.cmd.colorscheme "vague"
+
+vim.cmd.nnoremap("<C-d>", "<C-d>zz")
+vim.cmd.nnoremap("<C-u>", "<C-u>zz")
 opt.list = true
 opt.listchars = [[trail:·,tab:▸\ ]]
 vim.wo.relativenumber = true
