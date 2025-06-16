@@ -8,7 +8,7 @@ vimUtils.buildVimPlugin {
   src = pkgs.fetchFromGitHub {
     owner = "NotAShelf";
     repo = "direnv.nvim";
-    rev = "a2f1264909463fd012b7b0b6bbfebc282c5d2834";
-    hash = "sha256-nAnZte8okf8V6gH2Egy/32o3W8xznbYhsYBPQ+9F470=";
+    rev = "4dfc8758a1deab45e37b7f3661e0fd3759d85788";
+    hash = "sha256-KqO8uDbVy4sVVZ6mHikuO+SWCzWr97ZuFRC8npOPJIE=";
   };
 }

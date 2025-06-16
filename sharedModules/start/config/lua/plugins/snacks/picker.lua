@@ -1,7 +1,10 @@
 return {
-	enabled = true,
 	sources = {
+		files = {
+			hidden = true,
+		},
 		explorer = {
+			hidden = true,
 			layout = {
 				preset = "sidebar",
 				layout = {
