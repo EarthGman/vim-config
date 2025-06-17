@@ -4,7 +4,6 @@ with pkgs.vimPlugins;
   fzf-lua
   harpoon
   nvim-colorizer-lua
-  # nvim-surround
   which-key-nvim
   vim-tmux-navigator
   mini-trailspace
