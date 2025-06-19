@@ -49,9 +49,9 @@
             extraVimPlugins = import ./extra-plugins {
               pkgs = final; inherit inputs;
             };
-            packages = final: prev: import ./packages { pkgs = final; };
           };
-          default = extraPlugins;
+          packages = final: prev: import ./packages { pkgs = final; };
+          default = packages;
         };
       };
     };
