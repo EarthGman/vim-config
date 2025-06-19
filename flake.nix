@@ -50,7 +50,11 @@
               pkgs = final; inherit inputs;
             };
           };
-          packages = final: prev: import ./packages { pkgs = final; };
+          packages = final: prev: import ./packages {
+            pkgs = import inputs.nixpkgs {
+              overlays = [ outputs.overlays.extraPlugins ];
+            };
+          };
           default = packages;
         };
       };
