@@ -44,17 +44,10 @@
         };
       };
       flake = {
-        # impossible :(
-        # overlays = rec {
-        #   packages = final: prev: import ./packages {
-        #     pkgs = import inputs.nixpkgs {
-        #       system = builtins.currentSystem;
-        #       overlays = [
-        #         inputs.nix-library.overlays.default
-        #       ];
-        #     };
-        #   };
-        # default = packages;
+        overlays = rec {
+          packages = final: prev: { inherit (self.packages.${prev.system}) nvim; };
+          default = packages;
+        };
       };
     };
 }
