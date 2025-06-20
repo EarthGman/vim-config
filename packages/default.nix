@@ -10,7 +10,7 @@ rec {
   nvim = callPackage ../neovim.nix {
     packageName = "nvim";
     startPlugins = import ./nvim/start/plugins.nix { inherit pkgs; } ++ sharedStartPlugins;
-    optPlugins = sharedOptPlugins;
+    optPlugins = import ./nvim/opt/plugins.nix { inherit pkgs; } ++ sharedOptPlugins;
     dependencies = import ./nvim/dependencies.nix { inherit pkgs; } ++ sharedDependencies;
   };
   nvim-lite = callPackage ../neovim.nix {
