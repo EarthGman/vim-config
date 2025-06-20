@@ -45,7 +45,7 @@
       };
       flake = {
         overlays = rec {
-          packages = final: prev: { inherit (self.packages.${prev.system}) nvim; };
+          packages = final: prev: self.packages.${prev.system};
           default = packages;
         };
       };
