@@ -44,17 +44,18 @@
         };
       };
       flake = {
-        overlays = rec {
-          packages = final: prev: import ./packages {
-            pkgs = import inputs.nixpkgs {
-              system = builtins.currentSystem;
-              overlays = [
-                inputs.nix-library.overlays.default
-              ];
-            };
-          };
-          default = packages;
-        };
+        # impossible :(
+        # overlays = rec {
+        #   packages = final: prev: import ./packages {
+        #     pkgs = import inputs.nixpkgs {
+        #       system = builtins.currentSystem;
+        #       overlays = [
+        #         inputs.nix-library.overlays.default
+        #       ];
+        #     };
+        #   };
+        # default = packages;
       };
     };
+};
 }
