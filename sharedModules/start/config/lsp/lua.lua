@@ -1,3 +1,6 @@
+local library = vim.api.nvim_get_runtime_file("lua", true)
+table.insert(library, "${VIMRUNTIME}/lua")
+
 ---@type vim.lsp.Config
 return {
   cmd = { "lua-language-server" },
@@ -12,4 +15,12 @@ return {
     ".git",
   },
   filetypes = { "lua" },
+  settings = {
+    Lua = {
+      diagnostics = { globals = { "vim" } },
+      workspace = {
+        library = library,
+      },
+    },
+  },
 }

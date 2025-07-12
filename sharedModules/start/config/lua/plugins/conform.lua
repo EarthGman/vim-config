@@ -1,7 +1,7 @@
 require("conform").setup({
   formatters_by_ft = {
     lua = { "stylua" },
-    python = { "yapf -f" },
+    python = { "yapf" },
     nix = { "nixfmt" },
     go = { "gofumpt" },
     xml = { "xmlformat" },
@@ -14,5 +14,17 @@ require("conform").setup({
   },
   format_on_save = {
     timeout_ms = 500,
+  },
+  formatters = {
+    stylua = {
+      prepend_args = {
+        "--indent-type",
+        "Spaces",
+        "--indent-width",
+        "2",
+        "--collapse-simple-statement",
+        "FunctionOnly",
+      },
+    },
   },
 })
