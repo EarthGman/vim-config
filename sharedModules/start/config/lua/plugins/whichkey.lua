@@ -9,6 +9,8 @@ wk.add({
 		{ "<leader>q", "<cmd>q<cr>", desc = "Quit" },
 		{ "<leader>w", "<cmd>w<cr>", desc = "Write" },
 	},
+
+	{ "<C-A>",      "gg0vG$",                      desc = "select all" },
 	{ "<leader>vs", "<cmd>vsplit<cr>",             desc = "Vertical Split" },
 	{ "<leader>hs", "<cmd>sp<cr>",                 desc = "Horizontal Split" },
 	{ "<leader>bd", "<cmd>bd<cr>",                 desc = "Buffer Delete" },
