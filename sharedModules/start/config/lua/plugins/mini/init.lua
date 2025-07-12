@@ -6,5 +6,5 @@ require("mini.pairs").setup()
 require("mini.files").setup()
 
 wk.add({
-	{ "<Leader>mf", function() MiniFiles.open() end, desc = "Mini Files" },
+  { "<Leader>mf", function() MiniFiles.open() end, desc = "Mini Files" },
 })

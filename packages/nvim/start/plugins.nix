@@ -8,6 +8,9 @@ with pkgs.vimPlugins;
   blink-cmp
   nvim-treesitter.withAllGrammars
   tiny-inline-diagnostic-nvim
+  conform-nvim
+  SchemaStore-nvim
+  fidget-nvim
 ] ++ (with pkgs.extraVimPlugins; [
   direnv-nvim
 ])

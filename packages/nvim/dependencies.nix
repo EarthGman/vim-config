@@ -5,19 +5,30 @@ with pkgs; [
   gitMinimal
   curlMinimal
   llvmPackages.clang-tools # needed for nvim to find C libraries
-  nil
-  nixpkgs-fmt
-  lua-language-server
-  stylua
-  pyright
-  yapf
-  gopls
   go
   nodejs-slim
-  rust-analyzer
-  rustfmt
   rustc
   cargo
   lldb
   glibc
+
+  # language servers
+  nil
+  gopls
+  vscode-langservers-extracted
+  yaml-language-server
+  rust-analyzer
+  lua-language-server
+  pyright
+
+  # formatters
+  rustfmt
+  yapf
+  nixfmt-rfc-style
+  stylua
+  xmlformat
+  yamlfmt
+  yq
+  gofumpt
+  shfmt
 ]

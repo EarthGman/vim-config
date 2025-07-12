@@ -9,9 +9,11 @@ with pkgs.vimPlugins;
   mini-trailspace
   snacks-nvim
   mini-nvim
-] ++ (with pkgs.extraVimPlugins; [
+  lualine-nvim
+  gitsigns-nvim
+]
+++ (with pkgs.extraVimPlugins; [
   nvim-vague
   direnv-nvim
-  lzn
   nvim-universal-clipboard
 ])

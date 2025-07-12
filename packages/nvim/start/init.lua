@@ -8,5 +8,6 @@ require("plugins.snacks")
 require("plugins.mini")
 require("plugins.nvim-universal-clipboard")
 require("plugins.whichkey")
-
-require("plugins.lzn")
+require("plugins.conform")
+require("plugins.lualine")
+require("lsp")

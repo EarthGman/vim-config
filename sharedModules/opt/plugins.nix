@@ -1,3 +1,4 @@
 { pkgs, ... }:
-with pkgs.vimPlugins; [
+with pkgs.vimPlugins;
+[
 ]

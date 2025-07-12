@@ -9,7 +9,8 @@
     };
   };
 
-  outputs = { self, flake-parts, ... } @ inputs:
+  outputs =
+    { self, flake-parts, ... }@inputs:
     let
       inherit (flake-parts.lib) mkFlake;
       systems = [
@@ -20,29 +21,31 @@
     in
     mkFlake { inherit inputs; } {
       inherit systems;
-      perSystem = { pkgs, system, ... }: {
-        # flake parts does not have built in support for applying overlays to the pkgs argument
-        _module.args.pkgs = import inputs.nixpkgs {
-          inherit system;
-          overlays = [
-            inputs.nix-library.overlays.default
-          ];
-        };
-
-        packages = import ./packages { inherit pkgs; };
-
-        apps = rec {
-          nvim = {
-            type = "app";
-            program = "${self.packages.${system}.nvim}/bin/nvim";
+      perSystem =
+        { pkgs, system, ... }:
+        {
+          # flake parts does not have built in support for applying overlays to the pkgs argument
+          _module.args.pkgs = import inputs.nixpkgs {
+            inherit system;
+            overlays = [
+              inputs.nix-library.overlays.default
+            ];
           };
-          nvim-lite = {
-            type = "app";
-            program = "${self.packages.${system}.nvim-lite}/bin/nvim";
+
+          packages = import ./packages { inherit pkgs; };
+
+          apps = rec {
+            nvim = {
+              type = "app";
+              program = "${self.packages.${system}.nvim}/bin/nvim";
+            };
+            nvim-lite = {
+              type = "app";
+              program = "${self.packages.${system}.nvim-lite}/bin/nvim";
+            };
+            default = nvim;
           };
-          default = nvim;
         };
-      };
       flake = {
         overlays = rec {
           packages = final: prev: { inherit (self.packages.${prev.system}) nvim nvim-lite; };

@@ -1,16 +1,16 @@
 return {
-	sources = {
-		files = {
-			hidden = true,
-		},
-		explorer = {
-			hidden = true,
-			layout = {
-				preset = "sidebar",
-				layout = {
-					position = "right",
-				},
-			},
-		},
-	},
+  sources = {
+    files = {
+      hidden = true,
+    },
+    explorer = {
+      hidden = true,
+      layout = {
+        preset = "sidebar",
+        layout = {
+          position = "right",
+        },
+      },
+    },
+  },
 }
