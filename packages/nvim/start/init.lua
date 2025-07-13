@@ -2,7 +2,7 @@ require("globals")
 
 require("plugins.nvim-treesitter")
 require("plugins.tiny-inline")
-require("blink.cmp")
+require("plugins.blink-cmp")
 require("plugins.colorizer")
 require("plugins.snacks")
 require("plugins.mini")
