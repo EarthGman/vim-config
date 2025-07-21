@@ -16,7 +16,7 @@ wk.add({
   { "<leader>bd", "<cmd>bd<cr>", desc = "Buffer Delete" },
   { "<leader>x", "<cmd>x<cr>", desc = "Save and Quit" },
   { "<leader>vt", "<cmd>vert term<cr>", desc = "Vertical Terminal" },
-  { "<leader>ht", "<cmd>hori term<cr>", desc = "Horizontal Terminal" },
+  { "<leader>ht", "<cmd>hori term<cr><cmd>res 15<cr>", desc = "Horizontal Terminal" },
 
   -- harpoon keymap
   { "<leader>a", mark.add_file, desc = "Add file to Harpoon" },

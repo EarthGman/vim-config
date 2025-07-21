@@ -23,4 +23,5 @@ wk.add({
   { "<leader>sD", picker.diagnostics, desc = "snacks diagnostics" },
   { "<leader>sb", function() Snacks.dashboard() end, desc = "Snacks DashBoard" },
   { "<leader>n", picker.notifications, desc = "Notification History" },
+  { "<leader>sh", function() Snacks.picker.help() end, desc = "Help Pages" },
 })
