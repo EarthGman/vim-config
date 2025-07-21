@@ -4,6 +4,8 @@ vim.g.mapleader = " "
 vim.o.background = "dark"
 vim.cmd.colorscheme("vague")
 
+vim.keymap.set("t", "<M-Esc>", [[<C-\><C-n>]], { desc = "escape from terminal mode" })
+
 vim.cmd.nnoremap("<C-d>", "<C-d>zz")
 vim.cmd.nnoremap("<C-u>", "<C-u>zz")
 opt.list = true
