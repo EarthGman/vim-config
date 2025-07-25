@@ -34,6 +34,7 @@
 
           packages = import ./packages { inherit pkgs; };
 
+          # needed because package name and binary name are different
           apps = rec {
             nvim = {
               type = "app";
@@ -43,12 +44,22 @@
               type = "app";
               program = "${self.packages.${system}.nvim-lite}/bin/nvim";
             };
+            nvim-nix = {
+              type = "app";
+              program = "${self.packages.${system}.nvim-nix}/bin/nvim";
+            };
             default = nvim;
           };
         };
       flake = {
         overlays = rec {
-          packages = final: prev: { inherit (self.packages.${prev.system}) nvim nvim-lite; };
+          packages = final: prev: {
+            inherit (self.packages.${prev.system})
+              nvim
+              nvim-lite
+              nvim-nix
+              ;
+          };
           default = packages;
         };
       };

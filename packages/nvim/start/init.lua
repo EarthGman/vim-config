@@ -1,13 +1,17 @@
-require("globals")
+require("init")
+require("lsp")
+vim.lsp.enable({
+  "rust",
+  "go",
+  "nix",
+  "lua",
+  "python",
+  "c",
+  "json",
+  "yaml",
+})
 
 require("plugins.nvim-treesitter")
 require("plugins.tiny-inline")
 require("plugins.blink-cmp")
-require("plugins.colorizer")
-require("plugins.snacks")
-require("plugins.mini")
-require("plugins.nvim-universal-clipboard")
-require("plugins.whichkey")
 require("plugins.conform")
-require("plugins.lualine")
-require("lsp")

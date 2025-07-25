@@ -1,6 +1,7 @@
 #extra dependencies, language servers, tools, etc
 { pkgs, ... }:
-with pkgs; [
+with pkgs;
+[
   gnutar
   gitMinimal
   curlMinimal
