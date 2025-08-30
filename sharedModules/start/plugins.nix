@@ -11,9 +11,6 @@ with pkgs.vimPlugins;
   mini-nvim
   lualine-nvim
   gitsigns-nvim
-]
-++ (with pkgs.extraVimPlugins; [
   nvim-vague
-  direnv-nvim
   nvim-universal-clipboard
-])
+]

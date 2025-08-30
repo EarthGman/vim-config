@@ -11,6 +11,4 @@ with pkgs.vimPlugins;
   conform-nvim
   SchemaStore-nvim
   fidget-nvim
-] ++ (with pkgs.extraVimPlugins; [
-  direnv-nvim
-])
+]
