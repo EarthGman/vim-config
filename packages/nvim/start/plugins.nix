@@ -4,6 +4,7 @@ with pkgs.vimPlugins;
   lspkind-nvim # plugin to provide icons for various lsps
   none-ls-nvim
   mini-icons
+  mini-trailspace
   nvim-web-devicons
   blink-cmp
   nvim-treesitter.withAllGrammars

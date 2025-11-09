@@ -8,5 +8,4 @@ with pkgs;
   ripgrep
   tree-sitter
   ghostscript
-  ffmpeg
 ]

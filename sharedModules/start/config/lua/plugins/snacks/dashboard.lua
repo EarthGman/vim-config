@@ -1,5 +1,5 @@
 local banners = {
-	default = [[
+  default = [[
         GGGGGGGGGGGGG                                                           
      GGG::::::::::::G                                                           
    GG:::::::::::::::G                                                           
@@ -19,11 +19,11 @@ G:::::G        G::::Gm::::m   m::::m   m::::m a::::aaaa::::::a  n::::n    n::::n
 	]],
 }
 return {
-	enabled = true,
-	sections = {
-		{ section = "header" },
-		{ icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
-		{ icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
-	},
-	preset = { header = banners.default },
+  enabled = true,
+  sections = {
+    { section = "header" },
+    -- { icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
+    -- { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
+  },
+  preset = { header = banners.default },
 }

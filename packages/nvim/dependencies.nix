@@ -12,6 +12,7 @@ with pkgs;
   cargo
   lldb
   glibc
+  ffmpeg
 
   # language servers
   nil
@@ -25,7 +26,7 @@ with pkgs;
   # formatters
   rustfmt
   yapf
-  nixfmt-rfc-style
+  nixfmt
   stylua
   xmlformat
   yamlfmt
