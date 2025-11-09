@@ -6,6 +6,7 @@ with pkgs;
   gitMinimal
   curlMinimal
   llvmPackages.clang-tools # needed for nvim to find C libraries
+  imagemagick
   go
   nodejs-slim
   rustc
