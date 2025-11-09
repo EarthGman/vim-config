@@ -76,14 +76,14 @@
         };
       flake = {
         overlays = rec {
-          packages = final: prev: {
+          packages.gman = final: prev: {
             inherit (self.packages.${prev.system})
               nvim
               nvim-lite
               nvim-nix
               ;
           };
-          default = packages;
+          default = packages.gman;
         };
       };
     };
