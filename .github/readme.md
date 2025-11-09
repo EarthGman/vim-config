@@ -2,21 +2,22 @@
 
 ![nvim](https://raw.githubusercontent.com/EarthGman/vim-config/refs/heads/main/.github/nvim-dashboard.png)
 
-Utilizing the power of nix flakes, I can create several independent Neovim packages that can be run on any system with nix installed. No dependence NixOS modules, home-manager modules, nixvim, mason, lazy-nvim, or any plugin managers is required.
+The advantages of using a nix flake to configure your neovim:
+- access to nixpkgs, including plugin repo flakes, and the ability to override/lock plugin derivations declaratively.
+- declarative packaging of multiple neovim configurations for easy consumption.
+- versioning - you can roll back your neovim configuration any time if you dont like an update to neovim itself.
+- if installed through nixos or home-manager, you will always have a stable version of your neovim installed, meaning you can work on your neovim without it breaking your existing config.
+- no depedency plugin managers that break the unix philosophy (lazy.nvim)
+- no reliance on NixOS, home-manager, or third party nix neovim module set. (configure your vim directly in lua)
 
-**Features**
-- Truly declarative.
-- lazygit-integration
-- snacks-nvim
-- mini-nvim
-- treesitter syntax highlighting
-- whichkey
-- LSP: cpp, C, rust, python, lua, nix, and go.
-- overlay for NixOS or home-manager configurations.
+Drawbacks:
+- You will have to use nix to rebuild your neovim everytime you evaluate a change in the lua configuration.
+While annoying, it is much faster than using NixOS or home-manager modules (it rebuilds in less than 3 seconds on my PC)
 
-**Packages
+**Packages provided
 - nvim - Fully custom neovim with all plugins and dependencies installed
 - nvim-lite - A slimmer neovim without LSP or icons for servers or installer images.
+- nvim-nix - nvim-lite but with the nix lsp installed.
 
 If you are running a system with nix installed you can give it a try right now!
 
@@ -30,7 +31,7 @@ and Nix should take care of the rest.
 
 The first run will take some time to install the plugins and config files. Once the first run is complete, all files will be present in /nix/store until you run the garbage collector.
 
-**If the above command doesn't work ensure that "flakes" and "nix-command" are enabled within your nix installation or NixOS configuration under nix.settings.experimental-features**
+**If the above command doesn't work ensure that "flakes" and "nix-command" are enabled within your nix installation at /etc/nix/nix.conf or NixOS configuration under nix.settings.experimental-features**
 
 ------------------------------------------------------------------------
 # Installation
@@ -38,7 +39,7 @@ The first run will take some time to install the plugins and config files. Once 
 To install my Neovim persistently you can add
 ```flake.nix
 inputs = {
-  vim-config = {
+  gman-neovim = {
     url = "github:earthgman/vim-config";
     inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -50,35 +51,44 @@ Then add:
 
 ```nix
 { inputs, ... }:
-nixpkgs.overlays = [ inputs.vim-config.overlays.default ];
+nixpkgs.overlays = [ inputs.gman-neovim.overlays.default ];
 ```
 
 to your configuration.nix
 
-Now you will have "nvim" and "nvim-lite" attached to your "pkgs" argument
+You will now have a scoped package set pkgs.gman with the custom neovims
+
+Installation example:
 
 ```
 { pkgs, ... }:
 {
-  environment.systemPackages = [ pkgs.nvim ];
+  environment.systemPackages = [ pkgs.gman.nvim ];
+}
+
+or
+
+{ pkgs, ... }:
+{
+  home.packages = [ pkgs.gman.nvim ];
 }
 ```
 
 ------------------------------------------------------------------------
 
-**If you are using my NixOS-configuration I have provided a module for enabling a custom Neovim for both Nixos and home-manager.
+**If you are using my NixOS configuration, I have provided a module for enabling a custom Neovim for your NixOS configuration.
 
 ```nix
    programs.neovim-custom.enable = true;
 ```
 
-By default this will give you my default Neovim "nvim". However you can specify any neovim package using
+By default this will give you my default Neovim "pkgs.gman.nvim". However you can specify any neovim package using
 
 ```nix
-  programs.neovim-custom.package = pkgs.nvim-lite; 
+  programs.neovim-custom.package = pkgs.gman.nvim-lite; 
 ```
 
-This could include your own Neovim.
+This could include your own packaged Neovim.
 
 The module also comes with viAlias and vimAlias options.
 
