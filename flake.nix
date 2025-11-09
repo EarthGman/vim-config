@@ -74,6 +74,7 @@
             default = nvim;
           };
         };
+
       flake = {
         overlays = rec {
           packages.gman = final: prev: {
@@ -83,7 +84,7 @@
               nvim-nix
               ;
           };
-          default = packages.gman;
+          default = packages;
         };
       };
     };
